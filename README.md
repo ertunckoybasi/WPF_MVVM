@@ -1,4 +1,17 @@
- public class EFGenericRepository<T> : IGenericDAL<T> where T : class, IEntity, new()
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Tunc.Blazor.DataAccess.Concrete.EF.Contexts;
+using Tunc.Blazor.DataAccess.Interfaces;
+using Tunc.Blazor.Entities.Interfaces;
+
+namespace Tunc.Blazor.DataAccess.Concrete.EF.Repositories
+{
+    public class EFGenericRepository<T> : IGenericDAL<T> where T : class, IEntity, new()
     {
         protected EFDataContext _context;
 
@@ -169,3 +182,8 @@
 
 
     }
+
+}
+
+
+
